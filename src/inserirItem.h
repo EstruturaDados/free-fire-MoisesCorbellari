@@ -15,7 +15,7 @@ void inserirItem(){
     printf("Nome: ");
     scanf(" %[^\n]", novo.nome);
 
-    printf("Tipodos itens (ex: arma, munição, cura e etc): ");
+    printf("Tipo dos itens (ex: arma, munição, cura e etc): ");
     scanf(" %[^\n]", novo.tipo);
 
     printf("Quantidade: ");
