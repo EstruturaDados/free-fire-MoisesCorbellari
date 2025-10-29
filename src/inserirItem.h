@@ -1,28 +1,10 @@
-#include "src/estrutura.h"
+// inserirItem.h
+#ifndef INSERIRITEM_H
+#define INSERIRITEM_H
 
-// ---------------------------
-// função: inserirItem()
-// ---------------------------
-void inserirItem(){
-    if(itensTotal >= MAX_ITEM){
-        printf("Mochila cheia!\n");
-        return;
-    }
+#include "estrutura.h"
 
-    Item novo;
+void inserirVetor(MochilaVetor* m, Item novo);
+void inserirLista(No** inicio, Item novo);
 
-    printf("\n==== Cadastrar itens ====\n");
-    printf("Nome: ");
-    scanf(" %[^\n]", novo.nome);
-
-    printf("Tipo dos itens (ex: arma, munição, cura e etc): ");
-    scanf(" %[^\n]", novo.tipo);
-
-    printf("Quantidade: ");
-    scanf("%d", &novo.quantidade);
-
-    mochila[itensTotal] = novo;
-    itensTotal++;
-
-    printf("\nCadastrado com sucesso!\n");
-}
+#endif

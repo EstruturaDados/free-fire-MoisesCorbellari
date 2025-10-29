@@ -1,31 +1,9 @@
-#include "src/estrutura.h"
+#ifndef REMOVERITEM_H
+#define REMOVERITEM_H
 
-// ---------------------------
-// função: removerItem()
-// ---------------------------
-void removerItem(){
-    if (itensTotal == 0){
-        printf("\nNão há itens para remover!\n");
-        return;
-    }
-    char nomeItemRemover[30];
-    printf("Digite o nome do itens para remover: ");
-    scanf(" %[^\n]", nomeItemRemover);
+#include "estrutura.h"
 
-    int encontrar = 0;
-    for(int i=0; i < itensTotal; i++){
-        if (strcmp(mochila[i].nome, nomeItemRemover) == 0){
-            encontrar=1;
-            for (int j = i; j<itensTotal - 1; j++){
-                mochila[j] = mochila[j + 1];
-            }
-            itensTotal--;
+void removerVetor(MochilaVetor* m, const char* nome);
+void removerLista(No** inicio, const char* nome);
 
-            printf("\nItem '%s' removido com sucesso!\n", nomeItemRemover);
-            break;
-        }
-    }
-    if(!encontrar){
-        printf("Item não encontrado!\n");
-    }
-}
+#endif
